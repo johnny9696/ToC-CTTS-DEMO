@@ -26,6 +26,7 @@
 	<br>
 	<center><sup>1</sup> Department of Electronic Engineering, Hanyang University, Seoul, Republic of Korea</center>
 
+
 	<h2 id="abstract">Abstract</h2>
 	<p>
 		As human-computer interaction becomes increasingly important, generating natural speech that reflects conversational context is a challenging issue. Previous conversational TTS models provide prosody without considering the relationship between speakers during the conversation. This may not accurately understand the conversation and could not express the prosody while synthesizing speech. The difference between ground truth speech and synthesized speech can also result in inconsistent prosody during training and inference. To address these problems, we propose text-only conditioning conversational TTS (ToC-CTTS) model. For this we first introduce a mel prosody extractor and a text-only dialogue context encoder to produce dialogue based prosody. Mel prosody extractor provides a target for text-only dialogue context encoder which considers the speaker and listener relation, eliminating the need for synthesized speech and reducing variance in the dialogue context. ToC-CTTS model generate the robust phoneme-level dialogue condition and enhances overall speech quality.
@@ -40,12 +41,53 @@
 		</ul>
 	</div>
 	<a name="1"><h2>Model Architecture</h2></a>
-	<image  src="./FULL.png" style="max-width: 100%; height: auto;"
-	title="Proposed Model Architecture"></image>
+	<center><image  src="./FULL.png" style="max-width: 100%; height: auto;"
+	title="Proposed Model Architecture"></image></center>
 	<a name="2"><h2>Evaluation on Different Models</h2></a>
-	<image  src="./Table1.png" style="max-width: 100%; height: auto;"
-	title="Evaluation on Proposed model and other">
-	<image  src="./Table2.png" style="max-width: 100%; height: auto;"
-	title="Ablation Stuty">
-	<a name="3"><h2>4-C Speech Qualityu & Naturalness, 4-D Ablation Study</h2></a>
+	
+	<li><a>GT : Ground Truth</a></li>
+	<li><a>FS2 : FastSpeech2</a></li>
+	<li><a>DT : DailyTalk</a></li>
+	<li><a>T1 : Proposed model with mel prosody extractor</a></li>
+	<li><a>S1 : Proposed model with text-only dialogue context encoder</a></li>
+	<li><a>S2 : Proposed model without variance prodictor module</a></li>
+	<li><a>S3 : Proposed model replace cross-attention in to additve mechanism</a></li>
+	<li><a>S4 : Proposed model replace cross-attention into additive mechanism & without variance predictor</a></li>
+
+	<a name="3"><h2>4-C Speech Quality & Naturalness, 4-D Ablation Study</h2></a>
+	<h3>Single Audio Sample</h3>
+	<div class="table-responsive">
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align: : center"><strong>Text</strong></th>
+					<th style="text-align: : center"><strong>GT</strong></th>
+					<th style="text-align: : center"><strong>FS2</strong></th>
+					<th style="text-align: : center"><strong>DT</strong></th>
+					<th style="text-align: : center"><strong>T1</strong></th>
+					<th style="text-align: : center"><strong>S1</strong></th>
+					<th style="text-align: : center"><strong>S2</strong></th>
+					<th style="text-align: : center"><strong>S3</strong></th>
+					<th style="text-align: : center"><strong>S4</strong></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center; width: 500px;">Tell him I was asking about him</td>
+					<td style="text-align: left;"><audio src="Samples/Single/GT/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/FS2/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/DT/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/T1/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/S1/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/S2/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/S3/4_0_d96.wav", controls="" preload=""></audio></td>
+					<td style="text-align: left;"><audio src="Samples/Single/S4/4_0_d96.wav", controls="" preload=""></audio></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		925/May I see your drivers license?
+		1360/ How much does it cost?
+		280/Would she be interested in laptop?
+	<h3>Full Dialogue Sample</h3>
 </section>
