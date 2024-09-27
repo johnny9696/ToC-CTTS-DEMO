@@ -18,3 +18,34 @@
 
 <section class = "page-header">
 </section>
+
+<section class="main-context">
+	<h1 id=""><center> ToC-CTTS :Phoneme-level Conditioning To Text-to-Speech Based On Dialogue Text Context</center></h1>
+
+	<center> Junbum Kim<sup>1</sup>, and Joon-Hyuk Chang<sup>1</sup></center>
+	<br>
+	<center><sup>1</sup> Department of Electronic Engineering, Hanyang University, Seoul, Republic of Korea</center>
+
+	<h2 id="abstract">Abstract</h2>
+	<p>
+		As human-computer interaction becomes increasingly important, generating natural speech that reflects conversational context is a challenging issue. Previous conversational TTS models provide prosody without considering the relationship between speakers during the conversation. This may not accurately understand the conversation and could not express the prosody while synthesizing speech. The difference between ground truth speech and synthesized speech can also result in inconsistent prosody during training and inference. To address these problems, we propose text-only conditioning conversational TTS (ToC-CTTS) model. For this we first introduce a mel prosody extractor and a text-only dialogue context encoder to produce dialogue based prosody. Mel prosody extractor provides a target for text-only dialogue context encoder which considers the speaker and listener relation, eliminating the need for synthesized speech and reducing variance in the dialogue context. ToC-CTTS model generate the robust phoneme-level dialogue condition and enhances overall speech quality.
+	</p>
+
+	<h2><p class="toc_title">Contents</p></h2>
+	<div id="toc_container">
+		<ul>
+			<li><a href="#1">Model Architecture</a></li>
+			<li><a href="#2">Evaluation on Different Models</a></li>
+			<li><a href="#3">4-C Speech Qualityu & Naturalness, 4-D Ablation Study</a></li>
+		</ul>
+	</div>
+	<a name="1"><h2>Model Architecture</h2></a>
+	<image  src="./FULL.png" style="max-width: 100%; height: auto;"
+	title="Proposed Model Architecture"></image>
+	<a name="2"><h2>Evaluation on Different Models</h2></a>
+	<image  src="./Table1.png" style="max-width: 100%; height: auto;"
+	title="Evaluation on Proposed model and other">
+	<image  src="./Table2.png" style="max-width: 100%; height: auto;"
+	title="Ablation Stuty">
+	<a name="3"><h2>4-C Speech Qualityu & Naturalness, 4-D Ablation Study</h2></a>
+</section>
